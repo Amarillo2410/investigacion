@@ -1,5 +1,8 @@
-document.getElementById("verificar")
+
+document.getElementById("verificar") 
 .addEventListener("click", function() {
+    document.getElementById("texto");
+    let img= document.getElementById("imagen");
 
     let nombre = document.getElementById("nombre").value;
     let peso = parseFloat(document.getElementById("peso").value);
@@ -8,11 +11,15 @@ document.getElementById("verificar")
 
     let clasificacion = "";
     if (resultado < 18.5) {
-        alert (nombre + " tu indice de masa corporal es " + resultado.toFixed(2) + " por lo tanto estas en bajo peso");
-        nuevasrc = "/assents/imagenes/bajo_peso.jpg";
+        alert (nombre + " tu indice de masa corporal es " + resultado.toFixed(2) + " por lo tanto estas en bajo peso")
+        img.src="/assets/imagenes/bajopeso.jpg"
+        
     }
-    imagen.classList.add("fade-out");
-    imagen.src = nuevaSrc;         // CAMBIA la imagen del MISMO elemento <img>
-    imagen.classList.remove("fade-out");
+    else if(resultado>18.5 || resultado<24.9){
+        alert(nombre + "tu indice de masa corporal es de" + resultado.toFixed(2) + " por lo tanto tienes un peso normal");
+    }
+    else if(resultado<49 )
+        alert(nombre+ "tu indice de masa coporal es " + resultado.toFixed(2) + "por lo que tienes sobrepeso")
+        
 });
 
